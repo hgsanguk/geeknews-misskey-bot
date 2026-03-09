@@ -25,9 +25,9 @@ rebuild:
 
 db:
 	docker compose exec $(APP) python - <<'PY'
-import sqlite3
-conn = sqlite3.connect('/data/state.db')
-cur = conn.execute('SELECT COUNT(*) FROM seen_entries')
-print("seen entries:", cur.fetchone()[0])
-conn.close()
-PY
+    import sqlite3
+    conn = sqlite3.connect('/data/state.db')
+    cur = conn.execute('SELECT COUNT(*) FROM seen_entries')
+    print("seen entries:", cur.fetchone()[0])
+    conn.close()
+    PY
